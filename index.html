@@ -17,7 +17,12 @@
             color: #2c3e50;
         }
 
-        /* Header */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
         header {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
@@ -25,13 +30,7 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.2);
         }
 
         .header-content {
@@ -68,30 +67,34 @@
             opacity: 0.8;
         }
 
-        /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.7) 0%, rgba(118, 75, 162, 0.7) 100%),
+                        url('hero.jpg') center/cover;
             color: white;
-            padding: 5rem 0;
+            padding: 8rem 0;
             text-align: center;
+            position: relative;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
         }
 
         .hero h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
         }
 
         .hero-subtitle {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
+            font-size: 1.4rem;
+            margin-bottom: 2.5rem;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
         }
 
         .cta-button {
             background: white;
             color: #667eea;
-            padding: 1rem 2.5rem;
+            padding: 1.2rem 3rem;
             border: none;
             border-radius: 50px;
             font-size: 1.1rem;
@@ -100,26 +103,25 @@
             transition: all 0.3s;
             text-decoration: none;
             display: inline-block;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
         }
 
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.4);
         }
 
-        /* Content Sections */
         .section {
-            padding: 4rem 0;
+            padding: 5rem 0;
         }
 
         .section-alt {
-            background: #f8f9fa;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
         }
 
         .section-title {
             text-align: center;
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin-bottom: 3rem;
             color: #2c3e50;
         }
@@ -130,26 +132,38 @@
             max-width: 800px;
             margin: 0 auto 3rem;
             color: #555;
+            line-height: 1.8;
         }
 
-        /* Feature Grid */
         .feature-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
         }
 
         .feature-card {
             background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transition: all 0.3s;
         }
 
         .feature-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+        }
+
+        .feature-image {
+            width: 100%;
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .feature-content {
+            padding: 2rem;
         }
 
         .feature-icon {
@@ -158,110 +172,158 @@
         }
 
         .feature-card h3 {
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             margin-bottom: 1rem;
             color: #667eea;
         }
 
-        /* Values Section */
         .values-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            gap: 2.5rem;
+            margin-top: 3rem;
         }
 
         .value-item {
             text-align: center;
-            padding: 2rem;
+            padding: 2.5rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+        }
+
+        .value-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
         }
 
         .value-icon {
-            width: 80px;
-            height: 80px;
+            width: 100px;
+            height: 100px;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 1rem;
-            font-size: 2rem;
+            margin: 0 auto 1.5rem;
+            font-size: 2.5rem;
             color: white;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
         }
 
-        /* Activities */
         .activities-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
         }
 
         .activity-card {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            color: white;
-            padding: 1.5rem;
-            border-radius: 10px;
-            text-align: center;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
             transition: all 0.3s;
         }
 
         .activity-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+            transform: scale(1.03);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .activity-image {
+            width: 100%;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .activity-content {
+            padding: 1.8rem;
+            text-align: center;
         }
 
         .activity-card h4 {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: #2c3e50;
         }
 
-        /* Info Box */
         .info-box {
             background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
-            padding: 2rem;
-            border-radius: 10px;
-            margin: 2rem 0;
-            border-left: 5px solid #ff6b6b;
+            padding: 2.5rem;
+            border-radius: 15px;
+            margin: 3rem 0;
+            border-left: 6px solid #ff6b6b;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
         }
 
         .info-box h3 {
             color: #2c3e50;
             margin-bottom: 1rem;
+            font-size: 1.8rem;
         }
 
-        /* Contact Section */
+        .divider {
+            height: 250px;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+        }
+
+        .divider::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.6) 0%, rgba(118, 75, 162, 0.6) 100%);
+        }
+
         .contact-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
-            margin-top: 2rem;
+            margin-top: 3rem;
         }
 
         .contact-card {
             background: white;
-            padding: 2rem;
-            border-radius: 10px;
+            padding: 2.5rem;
+            border-radius: 15px;
             text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
         }
 
         .contact-card h3 {
             color: #667eea;
             margin-bottom: 1rem;
+            font-size: 1.5rem;
         }
 
-        /* Footer */
         footer {
-            background: #2c3e50;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
             color: white;
             text-align: center;
-            padding: 2rem 0;
-            margin-top: 4rem;
+            padding: 3rem 0;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
+            }
+
+            .hero {
+                padding: 5rem 0;
+                min-height: 400px;
             }
 
             .header-content {
@@ -277,6 +339,15 @@
 
             .section-title {
                 font-size: 2rem;
+            }
+
+            .section {
+                padding: 3rem 0;
+            }
+
+            .divider {
+                height: 150px;
+                background-attachment: scroll;
             }
         }
     </style>
@@ -351,6 +422,8 @@
         </div>
     </section>
 
+    <div class="divider" style="background-image: url('polarisatie.jpg');"></div>
+
     <section id="themas" class="section section-alt">
         <div class="container">
             <h2 class="section-title">Onze Thema's</h2>
@@ -361,38 +434,58 @@
 
             <div class="feature-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">🤝</div>
-                    <h3>Inclusie & Diversiteit</h3>
-                    <p>Leer omgaan met verschillen en creëer inclusieve omgevingen waar iedereen zich welkom voelt.</p>
+                    <div class="feature-image" style="background-image: url('koken.jpg');"></div>
+                    <div class="feature-content">
+                        <div class="feature-icon">🤝</div>
+                        <h3>Inclusie & Diversiteit</h3>
+                        <p>Leer omgaan met verschillen en creëer inclusieve omgevingen waar iedereen zich welkom voelt.</p>
+                    </div>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🌉</div>
-                    <h3>Polarisatie & Radicalisering</h3>
-                    <p>Begrijp de mechanismen achter maatschappelijke verdeeldheid en leer bruggen te bouwen.</p>
+                    <div class="feature-image" style="background-image: url('polarisatie.jpg');"></div>
+                    <div class="feature-content">
+                        <div class="feature-icon">🌉</div>
+                        <h3>Polarisatie & Radicalisering</h3>
+                        <p>Begrijp de mechanismen achter maatschappelijke verdeeldheid en leer bruggen te bouwen.</p>
+                    </div>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🏘️</div>
-                    <h3>Integratie & Sociale Cohesie</h3>
-                    <p>Versterk het gemeenschapsgevoel en werk aan een samenleving waarin iedereen meetelt.</p>
+                    <div class="feature-image" style="background-image: url('locatie.jpg');"></div>
+                    <div class="feature-content">
+                        <div class="feature-icon">🏘️</div>
+                        <h3>Integratie & Sociale Cohesie</h3>
+                        <p>Versterk het gemeenschapsgevoel en werk aan een samenleving waarin iedereen meetelt.</p>
+                    </div>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🗳️</div>
-                    <h3>Burgerschap & Democratie</h3>
-                    <p>Ontwikkel vaardigheden voor actief burgerschap en democratische participatie.</p>
+                    <div class="feature-image" style="background-image: url('locatie.jpg');"></div>
+                    <div class="feature-content">
+                        <div class="feature-icon">🗳️</div>
+                        <h3>Burgerschap & Democratie</h3>
+                        <p>Ontwikkel vaardigheden voor actief burgerschap en democratische participatie.</p>
+                    </div>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">💬</div>
-                    <h3>Interculturele Communicatie</h3>
-                    <p>Verbeter je communicatie over culturele grenzen heen en voorkom misverstanden.</p>
+                    <div class="feature-image" style="background-image: url('koken.jpg');"></div>
+                    <div class="feature-content">
+                        <div class="feature-icon">💬</div>
+                        <h3>Interculturele Communicatie</h3>
+                        <p>Verbeter je communicatie over culturele grenzen heen en voorkom misverstanden.</p>
+                    </div>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">⚖️</div>
-                    <h3>Conflictbemiddeling</h3>
-                    <p>Leer constructief omgaan met conflicten en vind duurzame oplossingen.</p>
+                    <div class="feature-image" style="background-image: url('locatie.jpg');"></div>
+                    <div class="feature-content">
+                        <div class="feature-icon">⚖️</div>
+                        <h3>Conflictbemiddeling</h3>
+                        <p>Leer constructief omgaan met conflicten en vind duurzame oplossingen.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <div class="divider" style="background-image: url('muziek.jpg');"></div>
 
     <section id="activiteiten" class="section">
         <div class="container">
@@ -401,66 +494,98 @@
                 We gebruiken diverse culturele methoden om leren en verbinding te stimuleren.
             </p>
 
-            <h3 style="text-align: center; margin: 2rem 0; color: #667eea;">Trainingen & Workshops</h3>
+            <h3 style="text-align: center; margin: 3rem 0 2rem; color: #667eea; font-size: 2rem;">Trainingen & Workshops</h3>
             <div class="activities-grid">
                 <div class="activity-card">
-                    <h4>🎨 Kunst & Creativiteit</h4>
-                    <p>Schilderen, beeldhouwen, fotografie</p>
+                    <div class="activity-image" style="background-image: url('kunst.jpg');"></div>
+                    <div class="activity-content">
+                        <h4>🎨 Kunst & Creativiteit</h4>
+                        <p>Schilderen, beeldhouwen, fotografie als middel voor verbinding</p>
+                    </div>
                 </div>
                 <div class="activity-card">
-                    <h4>🎵 Muziek & Dans</h4>
-                    <p>Wereldmuziek, drumcirkels, culturele dansen</p>
+                    <div class="activity-image" style="background-image: url('muziek.jpg');"></div>
+                    <div class="activity-content">
+                        <h4>🎵 Muziek & Dans</h4>
+                        <p>Wereldmuziek workshops, drumcirkels, culturele dansen</p>
+                    </div>
                 </div>
                 <div class="activity-card">
-                    <h4>🍳 Intercultureel Koken</h4>
-                    <p>Samen koken en eten uit verschillende culturen</p>
+                    <div class="activity-image" style="background-image: url('koken.jpg');"></div>
+                    <div class="activity-content">
+                        <h4>🍳 Intercultureel Koken</h4>
+                        <p>Samen koken en eten uit verschillende culturen</p>
+                    </div>
                 </div>
                 <div class="activity-card">
-                    <h4>💬 Dialoog & Debat</h4>
-                    <p>Gestructureerde gesprekscirkels en discussies</p>
+                    <div class="activity-image" style="background-image: url('locatie.jpg');"></div>
+                    <div class="activity-content">
+                        <h4>💬 Dialoog & Debat</h4>
+                        <p>Gestructureerde gesprekscirkels over maatschappelijke vraagstukken</p>
+                    </div>
                 </div>
                 <div class="activity-card">
-                    <h4>📖 Storytelling</h4>
-                    <p>Persoonlijke verhalen delen en luisteren</p>
+                    <div class="activity-image" style="background-image: url('koken.jpg');"></div>
+                    <div class="activity-content">
+                        <h4>📖 Storytelling</h4>
+                        <p>Verhalen delen als middel voor begrip en verbinding</p>
+                    </div>
                 </div>
                 <div class="activity-card">
-                    <h4>🎭 Theater & Rollenspel</h4>
-                    <p>Perspectief nemen door theater</p>
+                    <div class="activity-image" style="background-image: url('locatie.jpg');"></div>
+                    <div class="activity-content">
+                        <h4>🤲 Individuele Begeleiding</h4>
+                        <p>Persoonlijke coaching en ondersteuning</p>
+                    </div>
                 </div>
             </div>
 
-            <h3 style="text-align: center; margin: 3rem 0 2rem; color: #667eea;">Professionele Trainingen</h3>
+            <h3 style="text-align: center; margin: 4rem 0 2rem; color: #667eea; font-size: 2rem;">Professionele Trainingen</h3>
             <div class="feature-grid">
                 <div class="feature-card">
-                    <h3>Intercultureel Vakmanschap</h3>
-                    <p>Praktische vaardigheden voor multiculturele werkomgevingen</p>
+                    <div class="feature-image" style="background-image: url('locatie.jpg');"></div>
+                    <div class="feature-content">
+                        <h3>Intercultureel Vakmanschap</h3>
+                        <p>Praktische vaardigheden voor multiculturele werkomgevingen</p>
+                    </div>
                 </div>
                 <div class="feature-card">
-                    <h3>Culturele Competenties Zorg</h3>
-                    <p>Effectieve communicatie met diverse patiëntengroepen</p>
+                    <div class="feature-image" style="background-image: url('locatie.jpg');"></div>
+                    <div class="feature-content">
+                        <h3>Culturele Competenties Zorg</h3>
+                        <p>Effectieve communicatie met diverse patiëntengroepen</p>
+                    </div>
                 </div>
                 <div class="feature-card">
-                    <h3>Leiderschap in Diversiteit</h3>
-                    <p>Management vaardigheden voor diverse teams</p>
+                    <div class="feature-image" style="background-image: url('locatie.jpg');"></div>
+                    <div class="feature-content">
+                        <h3>Leiderschap in Diversiteit</h3>
+                        <p>Management vaardigheden voor diverse teams</p>
+                    </div>
                 </div>
                 <div class="feature-card">
-                    <h3>Inclusief Taalgebruik</h3>
-                    <p>Bewust communiceren in diverse groepen</p>
+                    <div class="feature-image" style="background-image: url('fotografie.jpg');"></div>
+                    <div class="feature-content">
+                        <h3>Inclusief Taalgebruik</h3>
+                        <p>Bewust communiceren in diverse groepen</p>
+                    </div>
                 </div>
             </div>
 
-            <h3 style="text-align: center; margin: 3rem 0 2rem; color: #667eea;">Doelgroepen</h3>
+            <h3 style="text-align: center; margin: 4rem 0 2rem; color: #667eea; font-size: 2rem;">Doelgroepen</h3>
             <div class="info-box">
-                <ul style="list-style: none; padding: 0;">
-                    <li>✓ Professionals in zorg, onderwijs en maatschappelijk werk</li>
-                    <li>✓ Statushouders en vluchtelingen - integratieondersteuning</li>
-                    <li>✓ Nieuwkomers - kennismaking met Nederlandse samenleving</li>
-                    <li>✓ Multiculturele teams en organisaties</li>
-                    <li>✓ Buurtbewoners en gemeenschappen</li>
+                <ul style="list-style: none; padding: 0; font-size: 1.1rem;">
+                    <li style="margin-bottom: 0.8rem;">✓ Professionals in zorg, onderwijs en maatschappelijk werk</li>
+                    <li style="margin-bottom: 0.8rem;">✓ Statushouders en vluchtelingen - integratieondersteuning</li>
+                    <li style="margin-bottom: 0.8rem;">✓ Nieuwkomers - kennismaking met Nederlandse samenleving</li>
+                    <li style="margin-bottom: 0.8rem;">✓ Multiculturele teams en organisaties</li>
+                    <li style="margin-bottom: 0.8rem;">✓ Buurtbewoners en gemeenschappen</li>
                 </ul>
             </div>
         </div>
     </section>
+
+    <div class="divider" style="background-image: url('kunst.jpg');"></div>
 
     <section id="locatie" class="section section-alt">
         <div class="container">
@@ -468,24 +593,36 @@
             
             <div class="feature-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">📍</div>
-                    <h3>Nijmegen</h3>
-                    <p>Griftdijk 113, goed bereikbaar met OV en eigen parkeerplaatsen</p>
+                    <div class="feature-image" style="background-image: url('locatie.jpg');"></div>
+                    <div class="feature-content">
+                        <div class="feature-icon">📍</div>
+                        <h3>Nijmegen</h3>
+                        <p>Griftdijk 113, goed bereikbaar met OV en eigen parkeerplaatsen</p>
+                    </div>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🏢</div>
-                    <h3>Inspirerende Ruimte</h3>
-                    <p>Moderne faciliteiten met flexibele inrichting voor diverse activiteiten</p>
+                    <div class="feature-image" style="background-image: url('locatie.jpg');"></div>
+                    <div class="feature-content">
+                        <div class="feature-icon">🏢</div>
+                        <h3>Inspirerende Ruimte</h3>
+                        <p>Moderne faciliteiten met flexibele inrichting voor diverse activiteiten</p>
+                    </div>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🚴</div>
-                    <h3>Duurzaam Bereikbaar</h3>
-                    <p>Fiets, OV en parkeerplaatsen met laadpalen beschikbaar</p>
+                    <div class="feature-image" style="background-image: url('locatie.jpg');"></div>
+                    <div class="feature-content">
+                        <div class="feature-icon">🚴</div>
+                        <h3>Duurzaam Bereikbaar</h3>
+                        <p>Fiets, OV en parkeerplaatsen met laadpalen beschikbaar</p>
+                    </div>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">🤝</div>
-                    <h3>Veilige Omgeving</h3>
-                    <p>Kleinschalig en persoonlijk, ideaal voor open dialoog</p>
+                    <div class="feature-image" style="background-image: url('koken.jpg');"></div>
+                    <div class="feature-content">
+                        <div class="feature-icon">🤝</div>
+                        <h3>Veilige Omgeving</h3>
+                        <p>Kleinschalig en persoonlijk, ideaal voor open dialoog</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -532,7 +669,6 @@
     </footer>
 
     <script>
-        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -545,31 +681,6 @@
                 }
             });
         });
-
-        // Animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '0';
-                    entry.target.style.transform = 'translateY(20px)';
-                    entry.target.style.transition = 'all 0.6s ease';
-                    
-                    setTimeout(() => {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }, 100);
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.feature-card, .activity-card, .value-item').forEach(el => {
-            observer.observe(el);
-        });
     </script>
 </body>
-              </html>
+</html>
