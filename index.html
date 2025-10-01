@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convivencia - Cultureel Trainingscentrum Nijmegen</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #2c3e50;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .tagline {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            font-style: italic;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            background: white;
+            color: #667eea;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        /* Content Sections */
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section-alt {
+            background: #f8f9fa;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #2c3e50;
+        }
+
+        .section-intro {
+            text-align: center;
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            color: #555;
+        }
+
+        /* Feature Grid */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+
+        /* Values Section */
+        .values-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .value-item {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .value-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 2rem;
+            color: white;
+        }
+
+        /* Activities */
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .activity-card {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .activity-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .activity-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Info Box */
+        .info-box {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            border-left: 5px solid #ff6b6b;
+        }
+
+        .info-box h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .contact-card h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 0.5rem;
+                text-align: center;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div>
+                    <div class="logo">Convivencia</div>
+                    <div class="tagline">Cultureel Trainingscentrum</div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#over">Over Ons</a></li>
+                        <li><a href="#themas">Thema's</a></li>
+                        <li><a href="#activiteiten">Activiteiten</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Samen Leven, Samen Leren</h1>
+            <p class="hero-subtitle">Kleinschalige trainingen en workshops voor verbinding en deskundigheidsbevordering</p>
+            <a href="#contact" class="cta-button">Neem Contact Op</a>
+        </div>
+    </section>
+
+    <section id="over" class="section">
+        <div class="container">
+            <h2 class="section-title">Wat is Convivencia?</h2>
+            <p class="section-intro">
+                Convivencia is een kleinschalig cultureel trainingscentrum in Nijmegen, gericht op ontmoeting, 
+                verbinding en deskundigheidsbevordering op maatschappelijke thema's. De naam 'Convivencia' 
+                komt van het Spaanse woord voor 'samenleven' en verwijst naar de historische periode waarin 
+                verschillende culturen vreedzaam samenwerkten.
+            </p>
+
+            <div class="info-box">
+                <h3>🏠 Kleinschalig & Persoonlijk</h3>
+                <p>Alle trainingen en workshops vinden plaats met maximaal 8-15 deelnemers. 
+                Dit garandeert intensieve begeleiding, veilige dialoog en optimale leerresultaten.</p>
+            </div>
+
+            <div class="values-container">
+                <div class="value-item">
+                    <div class="value-icon">🤝</div>
+                    <h3>Verbinding</h3>
+                    <p>We brengen mensen samen uit verschillende achtergronden en sectoren</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">📚</div>
+                    <h3>Leren</h3>
+                    <p>Deskundigheidsbevordering door ervaring, dialoog en reflectie</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">🌍</div>
+                    <h3>Inclusie</h3>
+                    <p>Iedereen is welkom, diversiteit is onze kracht</p>
+                </div>
+                <div class="value-item">
+                    <div class="value-icon">💡</div>
+                    <h3>Praktijk</h3>
+                    <p>Concrete vaardigheden en tools voor de dagelijkse praktijk</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="themas" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Onze Thema's</h2>
+            <p class="section-intro">
+                We richten ons op actuele maatschappelijke vraagstukken waar verbinding 
+                en begrip nodig zijn.
+            </p>
+
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3>Inclusie & Diversiteit</h3>
+                    <p>Leer omgaan met verschillen en creëer inclusieve omgevingen waar iedereen zich welkom voelt.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌉</div>
+                    <h3>Polarisatie & Radicalisering</h3>
+                    <p>Begrijp de mechanismen achter maatschappelijke verdeeldheid en leer bruggen te bouwen.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏘️</div>
+                    <h3>Integratie & Sociale Cohesie</h3>
+                    <p>Versterk het gemeenschapsgevoel en werk aan een samenleving waarin iedereen meetelt.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🗳️</div>
+                    <h3>Burgerschap & Democratie</h3>
+                    <p>Ontwikkel vaardigheden voor actief burgerschap en democratische participatie.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💬</div>
+                    <h3>Interculturele Communicatie</h3>
+                    <p>Verbeter je communicatie over culturele grenzen heen en voorkom misverstanden.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚖️</div>
+                    <h3>Conflictbemiddeling</h3>
+                    <p>Leer constructief omgaan met conflicten en vind duurzame oplossingen.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="activiteiten" class="section">
+        <div class="container">
+            <h2 class="section-title">Onze Activiteiten</h2>
+            <p class="section-intro">
+                We gebruiken diverse culturele methoden om leren en verbinding te stimuleren.
+            </p>
+
+            <h3 style="text-align: center; margin: 2rem 0; color: #667eea;">Trainingen & Workshops</h3>
+            <div class="activities-grid">
+                <div class="activity-card">
+                    <h4>🎨 Kunst & Creativiteit</h4>
+                    <p>Schilderen, beeldhouwen, fotografie</p>
+                </div>
+                <div class="activity-card">
+                    <h4>🎵 Muziek & Dans</h4>
+                    <p>Wereldmuziek, drumcirkels, culturele dansen</p>
+                </div>
+                <div class="activity-card">
+                    <h4>🍳 Intercultureel Koken</h4>
+                    <p>Samen koken en eten uit verschillende culturen</p>
+                </div>
+                <div class="activity-card">
+                    <h4>💬 Dialoog & Debat</h4>
+                    <p>Gestructureerde gesprekscirkels en discussies</p>
+                </div>
+                <div class="activity-card">
+                    <h4>📖 Storytelling</h4>
+                    <p>Persoonlijke verhalen delen en luisteren</p>
+                </div>
+                <div class="activity-card">
+                    <h4>🎭 Theater & Rollenspel</h4>
+                    <p>Perspectief nemen door theater</p>
+                </div>
+            </div>
+
+            <h3 style="text-align: center; margin: 3rem 0 2rem; color: #667eea;">Professionele Trainingen</h3>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3>Intercultureel Vakmanschap</h3>
+                    <p>Praktische vaardigheden voor multiculturele werkomgevingen</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Culturele Competenties Zorg</h3>
+                    <p>Effectieve communicatie met diverse patiëntengroepen</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Leiderschap in Diversiteit</h3>
+                    <p>Management vaardigheden voor diverse teams</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Inclusief Taalgebruik</h3>
+                    <p>Bewust communiceren in diverse groepen</p>
+                </div>
+            </div>
+
+            <h3 style="text-align: center; margin: 3rem 0 2rem; color: #667eea;">Doelgroepen</h3>
+            <div class="info-box">
+                <ul style="list-style: none; padding: 0;">
+                    <li>✓ Professionals in zorg, onderwijs en maatschappelijk werk</li>
+                    <li>✓ Statushouders en vluchtelingen - integratieondersteuning</li>
+                    <li>✓ Nieuwkomers - kennismaking met Nederlandse samenleving</li>
+                    <li>✓ Multiculturele teams en organisaties</li>
+                    <li>✓ Buurtbewoners en gemeenschappen</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="locatie" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Locatie & Faciliteiten</h2>
+            
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📍</div>
+                    <h3>Nijmegen</h3>
+                    <p>Griftdijk 113, goed bereikbaar met OV en eigen parkeerplaatsen</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏢</div>
+                    <h3>Inspirerende Ruimte</h3>
+                    <p>Moderne faciliteiten met flexibele inrichting voor diverse activiteiten</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚴</div>
+                    <h3>Duurzaam Bereikbaar</h3>
+                    <p>Fiets, OV en parkeerplaatsen met laadpalen beschikbaar</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤝</div>
+                    <h3>Veilige Omgeving</h3>
+                    <p>Kleinschalig en persoonlijk, ideaal voor open dialoog</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Contact & Aanmelden</h2>
+            <p class="section-intro">
+                Interesse in onze trainingen of wilt u meer informatie? 
+                Neem vrijblijvend contact met ons op.
+            </p>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>📧 Email</h3>
+                    <p>info@convivencia.nl</p>
+                </div>
+                <div class="contact-card">
+                    <h3>📱 Telefoon</h3>
+                    <p>024 - 123 4567</p>
+                </div>
+                <div class="contact-card">
+                    <h3>📍 Adres</h3>
+                    <p>Griftdijk 113<br>6515 AE Nijmegen</p>
+                </div>
+                <div class="contact-card">
+                    <h3>🕐 Bereikbaar</h3>
+                    <p>Ma-Vr: 09:00-17:00</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="mailto:info@convivencia.nl" class="cta-button">Stuur ons een bericht</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Convivencia Cultureel Trainingscentrum | Samen Leven, Samen Leren</p>
+            <p style="margin-top: 0.5rem; opacity: 0.8;">Nijmegen | KvK: [nummer] | BTW: [nummer]</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '0';
+                    entry.target.style.transform = 'translateY(20px)';
+                    entry.target.style.transition = 'all 0.6s ease';
+                    
+                    setTimeout(() => {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }, 100);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card, .activity-card, .value-item').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+              </html>
