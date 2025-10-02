@@ -209,6 +209,51 @@
             font-weight: 600;
         }
 
+        .activities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .activity-card {
+            background: #1a1a2e;
+            padding: 0;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #2a2a3e;
+            transition: all 0.3s;
+        }
+
+        .activity-card:hover {
+            border-color: #0f3460;
+            transform: translateY(-4px);
+        }
+
+        .activity-image {
+            width: 100%;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .activity-content {
+            padding: 1.5rem;
+        }
+
+        .activity-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .activity-card p {
+            color: #b0b0b0;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
         .target-groups {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -333,6 +378,7 @@
                 <nav>
                     <ul>
                         <li><a href="#expertise">Expertise</a></li>
+                        <li><a href="#activiteiten">Activiteiten</a></li>
                         <li><a href="#aanpak">Aanpak</a></li>
                         <li><a href="#doelgroepen">Doelgroepen</a></li>
                         <li><a href="#contact">Contact</a></li>
@@ -385,7 +431,40 @@
         </div>
     </section>
 
-    <section id="aanpak" class="section section-dark">
+    <section id="activiteiten" class="section section-dark">
+        <div class="container">
+            <h2 class="section-title">Creatieve Activiteiten</h2>
+            <p class="section-subtitle">Verbinding door kunst, muziek en fotografie - alternatieve manieren om met elkaar in gesprek te gaan</p>
+
+            <div class="activities-grid">
+                <div class="activity-card">
+                    <div class="activity-image" style="background-image: url('kunst.jpg');"></div>
+                    <div class="activity-content">
+                        <h3>Kunst & Expressie</h3>
+                        <p>Gebruik creativiteit als middel om verhalen te delen en begrip te creëren. Kunstzinnige workshops die dialoog stimuleren.</p>
+                    </div>
+                </div>
+
+                <div class="activity-card">
+                    <div class="activity-image" style="background-image: url('muziek.jpg');"></div>
+                    <div class="activity-content">
+                        <h3>Muziek & Cultuur</h3>
+                        <p>Ontdek hoe muziek culturen verbindt. Participatieve sessies waar diverse muzikale tradities samenkomen.</p>
+                    </div>
+                </div>
+
+                <div class="activity-card">
+                    <div class="activity-image" style="background-image: url('fotografie.jpg');"></div>
+                    <div class="activity-content">
+                        <h3>Fotografie & Perspectief</h3>
+                        <p>Leer kijken door een andere lens. Fotografische workshops die nieuwe perspectieven op diversiteit bieden.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="aanpak" class="section">
         <div class="container">
             <div class="approach-section">
                 <h2 class="section-title">Onze Aanpak</h2>
@@ -396,14 +475,14 @@
                 <div class="highlight-box">
                     <h3>Onze Methoden</h3>
                     <p style="color: #b0b0b0; line-height: 1.7;">
-                        We gebruiken diverse culturele methoden: van gestructureerde dialoogsessies en praktijkcases tot creatieve werkvormen zoals storytelling en rollenspel. Elke training wordt afgestemd op uw specifieke context en doelstellingen.
+                        We gebruiken diverse culturele methoden: van gestructureerde dialoogsessies en praktijkcases tot creatieve werkvormen zoals storytelling, kunst, muziek en fotografie. Elke training wordt afgestemd op uw specifieke context en doelstellingen.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="doelgroepen" class="section">
+    <section id="doelgroepen" class="section section-dark">
         <div class="container">
             <h2 class="section-title">Voor Wie</h2>
             <p class="section-subtitle">Onze trainingen zijn ontwikkeld voor professionals en organisaties die actief willen werken aan een inclusievere samenleving</p>
@@ -445,7 +524,7 @@
         </div>
     </section>
 
-    <section id="contact" class="section section-dark">
+    <section id="contact" class="section">
         <div class="container">
             <div class="contact-section">
                 <h2 class="section-title">Contact</h2>
